@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nombres</title>
+    <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- formulario para poner el nombre a identificar y se llama a la funcion -->
+    <form action="" method="post">
+        <input type="text" onchange="nomb()" name="" id="nombre">
+        <input type="button" value="identificar">
+    </form>
+<h1 id="h1"></h1>
+</body>
+</html>
+ <script>
+     function nomb() {
+        //se definen las variables 
+         var nombre = document.getElementById("nombre"); 
+         var h1 = document.getElementById("h1"); 
+         //se define i¿una lista de ombres especificos dierentes a la regla
+         let nombresm = ["Adrista",'Agastia','Akira','Ambarisha','Asura','Bautista','Borja','Rafa','Luca','luka','nikola'];
+         let nombref = ['luz','Carmen','Chloe','Abril','Inés','Irene','Rocio','Zoe','Leire','Iris','Nour','Yasmin','Arlet','Malak','Amparo','Astrid','Belen','Celeste','Guadalupe','Judith','Lis','Miriam','Naomi','Penelope','Salome','Selene'];
+         //si el nombre termina con a normalmente es de mujer
+         if (nombre.value.endsWith('a')) {
+            //se incluye los nombres especificos de hombre que terminan con a
+             if (nombresm.includes(nombre.value)) {
+                h1.innerHTML = "chico"
+             } else {
+                h1.innerHTML = "chica"
+             }
+         } else {
+            //se incluye los nombres especificos de mujer que no terminan con a
+            if (nombref.includes(nombre.value)) {
+                h1.innerHTML = "chica"
+             } else {
+                h1.innerHTML = "chico"
+             }
+         }
+     }
+ </script>
